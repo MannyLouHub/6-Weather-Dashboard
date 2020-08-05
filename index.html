@@ -18,20 +18,20 @@
 <div class="header text-center"><h1>Weather Dashboard</h1>
 </div>
 <div class="container-fluid">
+
     <div class="row">
         <!--Left Side-->
         <div class="col-4">
 
-            <div class="input-group mb-3">
+            <div class="input-group">
                 <input type="text" id="userSearch" class="form-control" placeholder="Search for a City">
                 <div class="input-group-append">
                     <button class="btn btn-primary fas fa-search" type="button" id="searchBtn">
                     </button>
-                    <div class="list-group">
-
-                    </div>
-
                 </div>
+            </div>
+            <div class="list-group pt-3" id="buttonlist">
+
             </div>
 
         </div>
@@ -48,7 +48,8 @@
         <!--5-Day Forecast-->
             <div class="row">
                 <h3 class="col-12"> 5-Day Forecast: </h3>
-                <div class="forecast">
+                <div class="forecast row col-12" id="forecast">
+
                 </div>
 
             </div>
@@ -69,5 +70,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 <script src="./Develop/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
 </body>
 </html>
