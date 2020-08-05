@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="149f9440-fb87-4e3e-8778-646211792fb2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Develop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Develop/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Develop/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Develop/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,7 @@
       <updated>1596499572344</updated>
       <workItem from="1596499573581" duration="15000" />
       <workItem from="1596593091874" duration="14947000" />
-      <workItem from="1596650711859" duration="2302000" />
+      <workItem from="1596650711859" duration="7115000" />
     </task>
     <servers />
   </component>
@@ -53,6 +52,12 @@
           <url>file://$PROJECT_DIR$/Develop/index.js</url>
           <line>12</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Develop/index.js</url>
+          <line>6</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,7 +1,7 @@
 // the API Key
 const apiKey = '588ac8f63f6e3b4105ac6b96471ea921';
 //array of cities
-const cityArray = []
+let cityArray = []
 
 // get weather API information
 async function getWeatherInformation(city) {
@@ -43,6 +43,7 @@ async function getOneCall(uvi) {
 }
 
 function render5days(days) {
+  document.getElementById('forecast').innerHTML = '';
   for (let i = 1; i < 6; i++) {
     // card body
     const card = document.createElement('div')
@@ -130,19 +131,47 @@ document.getElementById('searchBtn').addEventListener('click', async function ()
 //sending data to get UVindex Function
   await getOneCall(data);
 //Creating button for dates.
-  let button = document.createElement('button');
-  button.classList.add('p-3', 'list-group-item', 'list-group-item-action"')
-  button.innerText = data.name
-  document.getElementById('buttonlist').append(button)
 
-  for (let i = 0; i < cityArray.length; i++) {
-    if (cityArray[i] === data.name) {
-      console.log(cityArray)
-      console.log('double')
-    }
+//   let button = document.createElement('button');
+//   button.classList.add('p-3', 'list-group-item', 'list-group-item-action"')
+//   button.innerText = data.name
+//   document.getElementById('buttonlist').append(button)
+  // add information to array
+  const indexArray = cityArray.indexOf(data.name);
+  if (indexArray !== -1) {
+    cityArray.splice(indexArray, 1);
   }
+
+
   cityArray.push(data.name);
-  console.log(cityArray);
+  localStorage.setItem('Array', JSON.stringify(cityArray));
+
+
+//checking array information
+  renderHistory()
 
 });
 
+function renderHistory() {
+  document.getElementById('buttonlist').innerHTML = ''
+  for (let i = 0; i < cityArray.length; i++) {
+    let button = document.createElement('button');
+    button.classList.add('p-3', 'list-group-item', 'list-group-item-action"', 'buttonHistory')
+    button.innerText = cityArray[i];
+    button.addEventListener('click', function () {
+      document.getElementById('userSearch').value = this.innerText;
+      $('#searchBtn').click();
+    })
+
+    document.getElementById('buttonlist').prepend(button)
+  }
+}
+
+function loadHistory() {
+  cityArray = JSON.parse(localStorage.getItem('Array') ?? '[]');
+  renderHistory();
+  document.getElementById('userSearch').value = cityArray[cityArray.length - 1];
+  $('#searchBtn').click();
+}
+
+loadHistory();
